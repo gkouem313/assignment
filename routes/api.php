@@ -1,6 +1,9 @@
 <?php
 
-use Illuminate\Http\Request;
+use App\Http\Controllers\API\OfferController;
+use App\Http\Controllers\API\ShopCategoryController;
+use App\Http\Controllers\API\ShopController;
+use App\Http\Controllers\API\UserController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,6 +17,31 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
+Route::group([
+    'prefix' => 'users',
+    'controller' => UserController::class
+], function () {
+    Route::post('/register', 'register');
+    Route::post('/login', 'login')->middleware('auth.basic');
+});
+
+Route::group([
+    'prefix' => 'shops',
+    'middleware' => 'auth:sanctum',
+    'controller' => ShopController::class
+], function () {
+    Route::get('/', 'index');
+    Route::get('/create', 'create');
+    Route::post('/', 'store');
+    Route::get('/{shopId}', 'show');
+    Route::get('/{shopId}/edit', 'edit');
+    Route::patch('/{shopId}', 'update');
+});
+
+Route::group([
+    'prefix' => 'offers',
+    'middleware' => 'auth:sanctum',
+    'controller' => OfferController::class
+], function () {
+    Route::post('/', 'store');
 });
