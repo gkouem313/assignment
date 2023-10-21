@@ -9,7 +9,9 @@
             <directory>tests/Unit</directory>
         </testsuite>
         <testsuite name="Feature">
-            <directory>tests/Feature</directory>
+            <directory>tests/Feature/Offer</directory>
+            <directory>tests/Feature/Shop</directory>
+            <directory>tests/Feature/User</directory>
         </testsuite>
     </testsuites>
     <source>
