@@ -243,29 +243,4 @@ class ShopController extends BaseController
             'shop' => $shop
         ], 200);
     }
-
-    // public function destroy(Request $request, int $shopId): JsonResponse
-    // {
-    //     // log function name
-    //     $functionName = __CLASS__ . '::' . __FUNCTION__;
-    //     \Log::debug("$functionName()", $request->all());
-
-    //     $authUser = auth()->user();
-
-    //     // get shop
-    //     $shop = Shop::where('user_id', $authUser->id)->find($shopId);
-    //     if (!$shop) {
-    //         return response()->json([
-    //             'error_code' => 2,
-    //             'message' => 'Shop not found'
-    //         ], 400);
-    //     }
-
-    //     $shop->delete();
-
-    //     return response()->json([
-    //         'error_code' => 0,
-    //         'shop' => $shop
-    //     ], 200);
-    // }
 }
