@@ -33,7 +33,7 @@ To create the required containers, execute the following command:
 
 If this command runs successfully, it means that the necessary containers have been created. In case you encounter errors about occupied ports, you may need to free up the port or stop a conflicting service, such as apache2, before running the command again. Make sure that you have created the **.env** file before proceeding.
 
-To populate the database with initial data, you will need the **/database/seed_sql/assignment.sql**:
+To populate the database with initial data, you will need the **/database/seed_sql/assignment.sql**. There are two options to do so:
 1) Access the MySQL container by running sail mysql in a new terminal window and manually import the SQL file that contains the required tables and data.
 2) Use phpMyAdmin, which was installed using the docker-compose.yml file. Access phpMyAdmin through your browser at **localhost:8888** or any other port you specified in the **docker-compose.yml**. Log in with the credentials you defined in the **docker-compose.yml** file.
 
