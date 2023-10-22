@@ -20,5 +20,17 @@ class ShopCategorySeeder extends Seeder
         DB::table('shop_categories')->insert([
             'name' => 'Health',
         ]);
+
+        DB::table('shop_categories')->insert([
+            'name' => 'Books',
+        ]);
+
+        DB::table('shop_categories')->insert([
+            'name' => 'Comics',
+        ]);
+
+        DB::table('shop_categories')->insert([
+            'name' => 'Furniture',
+        ]);
     }
 }
