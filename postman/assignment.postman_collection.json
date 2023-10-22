@@ -1968,7 +1968,7 @@
 											"pm.test('Get device-token', function() {",
 											"    pm.response.to.have.status(200);",
 											"",
-											"    const deviceToken = pm.response.json().plain_text_token;",
+											"    const deviceToken = pm.response.json().token.plainTextToken;",
 											"    pm.environment.set(\"deviceToken\", deviceToken);",
 											"});"
 										],
